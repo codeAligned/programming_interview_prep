@@ -9,10 +9,105 @@ Updated 11/26/2016
 # ch 1 - Array and Strings
 # ************************************************************************************
 # 1.1 Implement an algo to determine if a string has all unique characters (you cannot use any data structures)
+# ************************************************************************************
 
 # 10:31 PM
-dfdfdf
+ord('a')
+ord('0')
 
+def are_all_chars_unique(s):
+    # ascii boolean array
+    arr = np.zeros(128)
+    for c in s:
+        if arr[ord(c)] == 1:
+            print('{} is a dupe!'.format(c))
+            return False
+        else:
+            arr[ord(c)] = 1
+    return True
+
+# 1.2 Write a function that reverses a string
+# ************************************************************************************
+# we can use a list as a stack
+
+def reverse_string(s):
+    p1 = 0 # 2 pointers, 1 starting from left, other from the right
+    p2 = len(s)-1
+    while p2 > p1:
+        swap(s,p1,p2)
+        p1 += 1
+        p2 -= 1
+
+def swap(arr,i,j):
+    temp = arr[i]
+    arr[i] = arr[j]
+    arr[j] = temp
+
+arr = [1,2,3,4,5]
+reverse_string(arr)
+arr
+
+swap(arr,0,2)
+
+# 1.3 Write a function that checks if one string is a permutation of the other
+# ************************************************************************************
+# use a dict, collect word -> counts, traverse s1
+# traverse s2, decrement
+#11:07
+
+
+def are_strings_permutations(s1,s2):
+    d = {}
+    for c in s1:
+        if c not in d.keys():
+            d[c] = 1
+        else:
+            d[c] += 1
+
+    for c in s2:
+        if c not in d.keys():
+            return False
+        elif d[c] <= 0:
+            return False
+        else:
+            d[c] -= 1
+    return True
+
+# Runtime = O(n + m)
+
+s1 = 'abbcda'
+s2 = 'dcbbaa'
+
+are_strings_permutations(s1,s2)
+
+def get_word_counts(s):
+    d = {}
+    for c in s:
+        if c not in d.keys():
+            d[c] = 1
+        else:
+            d[c] += 1
+    return d
+
+
+
+# 1.3 Write a function that compresses a string so aabcccccaaa is a2b1c5a3
+# ************************************************************************************
+# use tuples?
+#11:24
+s = 'aabcccccaaa'
+
+count = 0
+out = []
+for j in range(1,len(s)):
+    if s[j-1] == s[j]:
+        count += 1
+    else:
+        out.append(p1)
+        out.append(count)
+        count = 0
+
+out
 
 # ************************************************************************************
 # ch 17 - Moderate
