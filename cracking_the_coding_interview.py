@@ -91,23 +91,35 @@ def get_word_counts(s):
 
 
 
-# 1.3 Write a function that compresses a string so aabcccccaaa is a2b1c5a3
+# 1.5 Write a function that compresses a string so aabcccccaaa is a2b1c5a3
 # ************************************************************************************
 # use tuples?
 #11:24
-s = 'aabcccccaaa'
+s = 'aabbcdef'
 
-count = 0
+count = 1
 out = []
+last_char = s[0]
+
 for j in range(1,len(s)):
-    if s[j-1] == s[j]:
+    if s[j]==last_char:
         count += 1
     else:
-        out.append(p1)
+        out.append(last_char)
         out.append(count)
-        count = 0
+        count = 1
+        last_char = s[j]
+
+out.append(last_char)
+out.append(count)
 
 out
+
+# 1.6 Given a N by N matrix, rotate it by 90 degrees
+# ************************************************************************************
+
+
+
 
 # ************************************************************************************
 # ch 17 - Moderate
