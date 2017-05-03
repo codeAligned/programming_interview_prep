@@ -95,31 +95,66 @@ def get_word_counts(s):
 # ************************************************************************************
 # use tuples?
 #11:24
-s = 'aabbcdef'
+s = 'aabbbbbbbcdef'
 
-count = 1
-out = []
-last_char = s[0]
+def compress(s):
+    count = 1
+    out = []
+    last_char = s[0]
 
-for j in range(1,len(s)):
-    if s[j]==last_char:
-        count += 1
-    else:
-        out.append(last_char)
-        out.append(count)
-        count = 1
-        last_char = s[j]
+    for j in range(1,len(s)):
+        if s[j]==last_char:
+            count += 1
+        else:
+            out.append(last_char)
+            out.append(count)
+            count = 1
+            last_char = s[j]
 
-out.append(last_char)
-out.append(count)
+    out.append(last_char)
+    out.append(count)
 
-out
+    if len(out) >= len(s):
+        return s
+    return ''.join([str(x) for x in out])
+
+
+compress(s)
+
 
 # 1.6 Given a N by N matrix, rotate it by 90 degrees
 # ************************************************************************************
+# 5-2-17 Tues
+n = 5
+import numpy as np
 
+x = [[i+j*(n) for i in range(n)] for j in range(n)]
 
+def initialize_matrix(n):
+    return [[i+j*(n) for i in range(n)] for j in range(n)]
 
+n=9
+
+#lets do outer layer first
+def rotate_matrix(m):
+    n = len(m)
+    first = 0
+    for first in range(n-1):
+        last = n-1-first
+        for offset in range(first, last):
+            #print(offset)
+            temp = m[first][offset]
+            m[first][offset] = m[offset][last]
+            m[offset][last] = m[last][last - offset]
+            m[last][last - offset] = m[last - offset][first]
+            m[last - offset][ first] = temp
+            #print(first,offset, ' <- ', offset, last)
+        #print('first = ',first)
+        #print(np.matrix(m))
+        return m
+
+m = initialize_matrix(3)
+print(rotate_matrix(m))
 
 # ************************************************************************************
 # ch 17 - Moderate
