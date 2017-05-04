@@ -141,6 +141,7 @@ def rotate_matrix(m):
     first = 0
     for first in range(n-1):
         last = n-1-first
+
         for offset in range(first, last):
             #print(offset)
             temp = m[first][offset]
@@ -155,6 +156,37 @@ def rotate_matrix(m):
 
 m = initialize_matrix(3)
 print(rotate_matrix(m))
+
+# 1.7 Given a M by N matrix, if an element is 0, its entire row and column are set to 0
+# ************************************************************************************
+# 5-3-17 Wed
+
+#algorithm - keep 2 boolean arrays, row and col
+n=5
+m = random_matrix(n,min=0,max=4)
+
+rows = [0 for x in range(n)]
+cols = [0 for x in range(n)]
+
+# iterate through and mark the rows and cols arrays
+
+for row in range(n):
+    for col in range(n):
+        if m[row][col] == 0:
+            rows[row] = 1
+            cols[col] = 1
+
+#now iterate thru rows, cols and nullify each row/col
+
+for row in rows:
+    if rows[row]==1:
+        m[row]
+# in progress ........
+
+print(np.matrix(m))
+
+rows
+cols
 
 # ************************************************************************************
 # ch 17 - Moderate
