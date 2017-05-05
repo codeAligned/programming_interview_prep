@@ -178,15 +178,42 @@ for row in range(n):
 
 #now iterate thru rows, cols and nullify each row/col
 
-for row in rows:
-    if rows[row]==1:
-        m[row]
-# in progress ........
+for row,value in enumerate(rows):
+    if value:
+        m[row][:] = [0 for x in range(n)]
+
+for col,value in enumerate(cols):
+    if value:
+        m[:][col] = [0 for x in range(n)]
+
+# in progress .......
+# annoying, might have to revert to using numpy matrices
+
 
 print(np.matrix(m))
 
 rows
 cols
+
+
+# 1.8 given a isSubstring function, write a function to check whether two strings, s1, s2
+# is a rotation of the other
+#  ****************
+# Here's the trick - if s1 -> xy, then s2 would have to be yx
+# yx is always a substring of xyxy, hence s2 would have to be a substring of s1s1
+
+s2 = 'waterbottle'
+s1 = 'erbottlewat'
+
+def are_strings_rotations(s1,s2):
+    if s2 in s1+s1:
+        return True
+    else:
+        return False
+
+are_strings_rotations(s1, s2)
+
+
 
 # ************************************************************************************
 # ch 17 - Moderate
