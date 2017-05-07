@@ -8,6 +8,18 @@ Alex Chao
 """
 import random
 
+
+# swap, pass by reference
+
+
+def swap(a, i, j):
+    temp = a[i]
+    a[i] = a[j]
+    a[j] = temp
+    #return a
+
+
+
 def random_matrix(n, m=None,min=0,max=9):
     if m is None:
         m = n
@@ -22,8 +34,11 @@ def initialize_matrix(n):
     """
     return [[i+j*(n) for i in range(n)] for j in range(n)]
 
+
+"""
 def swap(a, b):  # assume a > b
     a = a - b  # a = diff
     b = a + b  # b = diff + b = a
     a = b - a  # a = a- diff = b
-    print a, b
+    print(a, b)
+"""
