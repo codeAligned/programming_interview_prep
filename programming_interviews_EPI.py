@@ -200,6 +200,30 @@ def dutch_flag(p, s):
         print s
     return s
 
+# WORKING (added on 5-7-2017)
+
+def dutch_flag(a, p):
+    lo = 0
+    mid = 0
+    hi = len(a)-1
+
+    pivot = a[p]
+    while mid < hi:
+        if a[mid] < pivot:
+            swap(a,lo,mid)
+            lo += 1
+            mid += 1
+        elif a[mid] == pivot:
+            mid += 1
+        else: # > pivot
+            swap(a,mid,hi)
+            hi -= 1
+    return a
+
+
+
+
+
 
 # generate a random vector
 a = [randint(1, 3) for x in range(10)]
