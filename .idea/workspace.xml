@@ -1,15 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fdc563ba-6808-4bc3-983b-abd0fa3002e9" name="Default" comment="- added evens_and_odds&#10;- new directory for EPI&#10;- split out helper files">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/EPI/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/EPI/chaper_5_arrays.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/helper/__init__.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/helper.py" afterPath="$PROJECT_DIR$/helper/helper.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/programming_interview_prep.iml" afterPath="$PROJECT_DIR$/.idea/programming_interview_prep.iml" />
+    <list default="true" id="fdc563ba-6808-4bc3-983b-abd0fa3002e9" name="Default" comment="- added">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/EPI/chaper_5_arrays.py" afterPath="$PROJECT_DIR$/EPI/chaper_5_arrays.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -34,8 +28,8 @@
       <file leaf-file-name="programming_interviews_EPI.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/programming_interviews_EPI.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="50" column="0" lean-forward="true" selection-start-line="40" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+            <state relative-caret-position="588">
+              <caret line="209" column="16" lean-forward="false" selection-start-line="209" selection-start-column="16" selection-end-line="209" selection-end-column="16" />
               <folding>
                 <element signature="e#349#367#0" expanded="true" />
               </folding>
@@ -46,8 +40,8 @@
       <file leaf-file-name="chaper_5_arrays.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/EPI/chaper_5_arrays.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="25" column="31" lean-forward="true" selection-start-line="25" selection-start-column="31" selection-end-line="25" selection-end-column="31" />
+            <state relative-caret-position="280">
+              <caret line="112" column="0" lean-forward="true" selection-start-line="112" selection-start-column="0" selection-end-line="112" selection-end-column="0" />
               <folding>
                 <element signature="e#310#328#0" expanded="true" />
               </folding>
@@ -69,7 +63,7 @@
         <entry file="file://$PROJECT_DIR$/helper/helper.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="180">
-              <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="17" selection-end-column="15" />
+              <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="17" selection-end-column="15" />
               <folding />
             </state>
           </provider>
@@ -89,6 +83,7 @@
       <find>rand</find>
       <find>swap</find>
       <find>def swap</find>
+      <find>dutch</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -105,6 +100,7 @@
         <option value="$PROJECT_DIR$/chaper_5_arrays.py" />
         <option value="$PROJECT_DIR$/helper.py" />
         <option value="$PROJECT_DIR$/helper/helper.py" />
+        <option value="$PROJECT_DIR$/programming_interviews_EPI.py" />
         <option value="$PROJECT_DIR$/EPI/chaper_5_arrays.py" />
       </list>
     </option>
@@ -176,7 +172,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Font" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.General" />
     <property name="last_opened_file_path" value="/anaconda/bin/python3.6" />
   </component>
   <component name="RecentsManager">
@@ -277,6 +273,21 @@
       <option name="presentableId" value="Default" />
       <updated>1491776708223</updated>
     </task>
+    <task id="LOCAL-00001" summary="- added evens_and_odds&#10;- new directory for EPI&#10;- split out helper files">
+      <created>1494189448583</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1494189448583</updated>
+    </task>
+    <task id="LOCAL-00002" summary="- added 5.1 - dutch national flag problem">
+      <created>1494193529248</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1494193529248</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -288,7 +299,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.47738096" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4113095" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13035715" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -305,6 +316,11 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="- added evens_and_odds&#10;- new directory for EPI&#10;- split out helper files" />
+    <MESSAGE value="- added 5.1 - dutch national flag problem" />
+    <option name="LAST_COMMIT_MESSAGE" value="- added 5.1 - dutch national flag problem" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -355,16 +371,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/programming_interviews_EPI.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="50" column="0" lean-forward="true" selection-start-line="40" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
-          <folding>
-            <element signature="e#349#367#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/helper/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -376,15 +382,25 @@
     <entry file="file://$PROJECT_DIR$/helper/helper.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
-          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="17" selection-end-column="15" />
+          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="17" selection-end-column="15" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/programming_interviews_EPI.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="588">
+          <caret line="209" column="16" lean-forward="false" selection-start-line="209" selection-start-column="16" selection-end-line="209" selection-end-column="16" />
+          <folding>
+            <element signature="e#349#367#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/EPI/chaper_5_arrays.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="31" lean-forward="true" selection-start-line="25" selection-start-column="31" selection-end-line="25" selection-end-column="31" />
+        <state relative-caret-position="280">
+          <caret line="112" column="0" lean-forward="true" selection-start-line="112" selection-start-column="0" selection-end-line="112" selection-end-column="0" />
           <folding>
             <element signature="e#310#328#0" expanded="true" />
           </folding>

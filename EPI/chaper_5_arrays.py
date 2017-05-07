@@ -107,5 +107,42 @@ def dutch_flag(a, p):
     return a
 
 
+# ************************************************************************************
+# 5.6 - Buy and Sell a stock once for max profit (opposite of max drawdown)
+# ************************************************************************************
+
+a = [randint(0,9) for x in range(10)]
+a
+max_profit(a)
+
+# min so far
+# max so far
+# max ending here
+
+def max_profit(a):
+    MIN_NUM = -999
+    MAX_NUM = 999
+
+    running_min = MAX_NUM
+    running_max = MIN_NUM
+    max_ending_here = MIN_NUM
+    max_so_far = MIN_NUM
+
+    for i, num in enumerate(a):
+        if num < running_min:
+            running_min = num # new running min
+            running_max = num # reset running max
+
+        running_max = max(running_max, num) # update running max if needed
+        max_ending_here = running_max -running_min
+        max_so_far = max(max_so_far, max_ending_here)
+
+    return max_so_far
+
+# solution
+
+def max_profit(a)
+
+
 
 
