@@ -164,7 +164,22 @@ a = [randint(0, 9) for x in range(10)]
 # ************************************************************************************
 # 5.9 - Enumerate all primes to n
 # ************************************************************************************
+# repeat of CTCI
 
+def enumerate_primes_to_n(n):
+    bool_arr = [1 for x in range(n)]
+    # set first 2 index to be 0
+    bool_arr[:2]=[0,0]
+    primes = []
+    for i in range(2, int(n**0.5) +1): # only need to go up to sqrt(2)
+        for j in range(2*i,n,i): # seive all multiples
+            bool_arr[j] = 0
+    for i,v in enumerate(bool_arr):
+        if v== 1:
+            primes.append(i)
+    return primes
+
+enumerate_primes_to_n(100)
 
 # ************************************************************************************
 # 5.10 - Permute elements of an array - Given array A, and permutation array P,
