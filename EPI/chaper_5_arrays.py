@@ -193,6 +193,7 @@ enumerate_primes_to_n(100)
 # ************************************************************************************
 # 5.14 - Compute random permutation (shuffle)
 # ************************************************************************************
+
 # for every i
 # pick random number from i+1 to n
 # swap ( i, random num)
@@ -204,6 +205,7 @@ def permute(a):
         swap(a,i, randint(i+1,n))
 
 # Test it out
+# ============
 
 d = {}
 for i in range(10000):
@@ -224,3 +226,86 @@ def add_to_dict(d, key):
         d[key] = 1
 
 
+# ************************************************************************************
+# 5.18 - Print the spiral ordering of a 2D array (clockwise, starting at 0,0)
+# ************************************************************************************
+
+n=4
+x = [[i+j*(n) for i in range(n)] for j in range(n)]
+
+"""
+Row                     | Col
+------------------------|-------------------------             
+ first + i              | (first + i , last - i)
+(first + i, last - i)   |  last - i
+ last - i               | (last - i, first + i)
+(last - i, first + (i+1)| first + i
+
+"""
+n
+for i in range(n/2): # what if its odd?
+    print('i=',i)
+    print(print_ith_layer(x,i))
+# IN PROGRESS
+
+
+def print_ith_layer(x, i):
+    """
+    
+    Parameters
+    ----------
+    x -> n x n 2D array
+    i -> layer in which to print in spiral format
+
+    Returns
+    -------
+    None
+    """
+    #import pdb; pdb.set_trace()
+    first = 0
+    last = len(x)-1
+    out = []
+    top = flatten_list(x[ first + i , first + i : last - i ].tolist()) #top
+    right = flatten_list(x[ first + i : last - i +1  , last - i].tolist() )# right
+    bottom = flatten_list(x[ last - i ,  first + i: last - i ].tolist() )# bottom
+    left = flatten_list(x[ first + i + 1: last - i , first + i].tolist() )# left
+
+    bottom = bottom[::-1]
+    left = left[::-1]
+
+    for l in [top,right,bottom,left]:
+        out.extend(l)
+    return out
+
+def flatten_list(l):
+    """
+    
+    Parameters
+    ----------
+    l - list of lists, e.g. [[0,1,2]]
+
+    Returns
+    -------
+    list - [0,1,2]
+    """
+    return reduce(lambda x,y: x+y, l)
+
+
+print(x[ first + i , first + i : last - i ]) # top
+print(x[ first + i : last - i +1  , last - i]) # right
+print(x[ last - i ,  first + i: last - i ]) # bottom
+print(x[ first + i + 1: last - i +1 , first + i]) # left
+
+
+x[first:last+1, last]
+
+x = np.matrix(x)
+s = x[0:3,1]
+s[::-1]
+
+x[3,:]
+
+
+# ************************************************************************************
+# 5.19 - Rotate a 2D array (CTCI)
+# ************************************************************************************
