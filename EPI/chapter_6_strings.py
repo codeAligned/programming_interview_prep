@@ -19,6 +19,11 @@ from helper.helper import *
 # converts from base b1 to base b2
 # ************************************************************************************
 
+s = '265'
+b1 = 10
+b2 = 8
+
+
 
 # ************************************************************************************
 # 6.3 - Compute Spreadsheet column encoding - Input: "D", return 4, input "AA", return 27
