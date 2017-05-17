@@ -35,7 +35,37 @@ b2 = 8
 
 # ************************************************************************************
 # 6.5 - Test Palindromicity - takes string, returns true is its a palindrome (SHOULD BE EASY)
+# NOTE: you should ignore non characters
+# "A man, a plan, a canal: Panama" is a palindrome.
 # ************************************************************************************
+# trick is to use 2 ptrs
+ord('0')
+ord('z')
+
+s = 'abba abba'
+
+#WORKS - 5-16-2017
+
+def is_palindrome(s):
+    start = 0
+    end = len(s) - 1
+    while start < end:
+        while (not s[start].isalnum()) & (start < end):
+            start += 1
+        while (not s[end].isalnum()) & (start < end):
+            end -= 1
+        if s[start].lower() != s[end].lower():
+            return False
+        start += 1
+        end -= 1
+    return True
+
+def is_char(c):
+    return (122 >= ord(c) >= 48)
+
+is_palindrome('A man, a plan, a canal: Panama')
+is_palindrome('.,')
+
 
 # ************************************************************************************
 # 6.6 - Reverse all Words in a Sentence - reverse words in a string
