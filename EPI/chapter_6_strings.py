@@ -39,10 +39,6 @@ b2 = 8
 # "A man, a plan, a canal: Panama" is a palindrome.
 # ************************************************************************************
 # trick is to use 2 ptrs
-ord('0')
-ord('z')
-
-s = 'abba abba'
 
 #WORKS - 5-16-2017
 
@@ -63,15 +59,15 @@ def is_palindrome(s):
 def is_char(c):
     return (122 >= ord(c) >= 48)
 
-is_palindrome('A man, a plan, a canal: Panama')
-is_palindrome('.,')
+#is_palindrome('A man, a plan, a canal: Panama')
+#is_palindrome('.,')
 
 
 # ************************************************************************************
 # 6.6 - Reverse all Words in a Sentence - reverse words in a string
 # e.g. input: Alice Likes Bob, returns Bob Likes Alice (GS ASKED ME THIS)
 # ************************************************************************************
-
+# TO DO
 
 # ************************************************************************************
 # 6.7 - Compute All Mnemonics for a Phone Number
