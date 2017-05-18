@@ -56,18 +56,35 @@ def is_palindrome(s):
         end -= 1
     return True
 
-def is_char(c):
-    return (122 >= ord(c) >= 48)
-
-#is_palindrome('A man, a plan, a canal: Panama')
-#is_palindrome('.,')
-
+#
+# is_palindrome('A man, a plan, a canal: Panama')
+# is_palindrome('.,')
+#
 
 # ************************************************************************************
 # 6.6 - Reverse all Words in a Sentence - reverse words in a string
 # e.g. input: Alice Likes Bob, returns Bob Likes Alice (GS ASKED ME THIS)
 # ************************************************************************************
 # TO DO
+s = 'Alice likes Bob'
+
+def reverse_sentence(s):
+    list_of_words = s.split(' ')
+    out = []
+    for word in list_of_words:
+        out.append(reverse(word))
+    out = ' '.join(out)
+    return reverse(out)
+
+#reverse string
+def reverse(s):
+    s = list(s)
+    start, end = 0, len(s)-1
+    while start < end:
+        swap(s,start,end)
+        start += 1
+        end -= 1
+    return ''.join(s)
 
 # ************************************************************************************
 # 6.7 - Compute All Mnemonics for a Phone Number
