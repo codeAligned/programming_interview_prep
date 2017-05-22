@@ -33,3 +33,31 @@ n = 5
 num_ways = np.zeros([n, n])
 count_ways_2D_array_DP(n - 1, n - 1, num_ways)
 num_ways
+
+# ************************************************************************************
+# 16.6 - The Knapsack Problem
+# ************************************************************************************
+
+values = [60, 50, 70, 30]
+weights = [5, 3, 4, 2]
+capacity = 5
+
+def knapsack(values,weights,capacity):
+    V = np.zeros([len(values), capacity + 1])
+    for i in range(len(values)):
+        for w in range(capacity+1):
+            # each new row is a new item
+            # if the new item weights too much, we cant take it
+            # else, we take the max of (take item) vs (dont take item)
+            V[i][w] = V[i-1][w] if weights[i] > w else max(V[i-1][w - weights[i]] + values[i], V[i-1][w])
+    return V
+
+print(knapsack(values,weights,capacity))
+
+
+# ************************************************************************************
+# 16.8 Find Min Weight Path in a Triangle
+# ************************************************************************************
+# Trick - write as triangular matrix, work backwards
+
+
