@@ -14,8 +14,10 @@ from helper.helper import *
 # assume array is unsorted and all entries are distinct
 # same as partition function in quicksort() algo
 # ************************************************************************************
+# leet code -> https://leetcode.com/problems/kth-largest-element-in-an-array/#/solutions
 
 
+# need to also pass in left, right, pivot_index
 def partition(a):
     """
     
