@@ -10,7 +10,7 @@ import numpy as np
 from helper.helper import *
 from random import randint
 
-# not working!!
+# yes, this works!! as of Sun 6-4-2017
 
 def partition(a, lo, hi):
     """
@@ -25,9 +25,10 @@ def partition(a, lo, hi):
     """
 
     # set partition to be last element
-    p = len(a ) -1
-    hi = p- 1 if p is None else hi
-    lo = 0 if lo is None else lo
+    p = hi
+    hi = hi - 1
+    #hi = p- 1 if p is None else hi
+    #lo = 0 if lo is None else lo
 
     while lo < hi:
         if (a[lo] > a[p]) & (a[hi] < a[p]):  # we need to swap
@@ -49,19 +50,21 @@ def partition(a, lo, hi):
 
 
 def quicksort(a,start,end):
-    if start == end:
+    if start >= end: # make sure its >= not just ==
         return a[start]
     if start < end:
         p = partition(a,start,end)
-        left = quicksort(a,start,p)
+        left = quicksort(a,start,p-1) # make sure its p-1, not p
         right = quicksort(a,p+1, end)
+    # hmm, turns out you dont need to return anything
+    #return left + p + right
 
-    return left + p + right
 
-
-a = [randint(1,9) for x in range (10)]
+a = [randint(1,99) for x in range (20)]
 
 
 quicksort(a,0,len(a)-1)
+
+a
 
 
