@@ -9,6 +9,10 @@ Alex Chao
 import random
 
 
+def convert_dict_to_dataframe(d):
+    return pd.DataFrame.from_dict(d,orient='index')
+
+
 # swap, pass by reference
 
 
