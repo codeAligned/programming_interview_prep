@@ -39,6 +39,11 @@ def initialize_matrix(n):
     return [[i+j*(n) for i in range(n)] for j in range(n)]
 
 
+
+def initialize_matrix_zeros(rows,cols):
+    return [[0 for x in range(cols)] for y in range(rows)]
+
+
 """
 def swap(a, b):  # assume a > b
     a = a - b  # a = diff

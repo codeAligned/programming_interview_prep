@@ -12,6 +12,49 @@ import numpy as np
 # 16.1 - Count the number of score combinations of football game
 # ************************************************************************************
 
+final_score = 12
+
+scores = [2,3,7]
+
+football_working(11,scores)
+
+def football_working(final_score = 12, scores = [2,3,7]):
+    cols = final_score+1
+    rows = len(scores)
+
+    A = initialize_matrix_zeros(rows,cols)
+
+    #seive off 1st row
+    for j in range(cols):
+        A[0][j] = 1 if j % scores[0] == 0 else 0
+
+    for row in range(1,rows):
+        for col in range(cols):
+            if col < scores[row]: # this score is too low, just copy over upper value
+                A[row][col] = A[row-1][col]
+            else: # add total combinations from last value
+                #print(row, col)
+                A[row][col] = A[row-1][col] + A[row][col - scores[row]]
+    return A[-1][-1]
+
+
+
+#not working
+def football(n):
+    if n == 2 or n == 3 or n == 0:
+        return 1
+    elif n == 1:
+        return 0
+    elif n >= 7:
+        return football(n-2) + football(n-3) + football(n-7)
+    else:
+        return football(n-2) + football(n-3)
+
+
+def initialize_matrix_zeros(rows,cols):
+    return [[0 for x in range(cols)] for y in range(rows)]
+
+
 # ************************************************************************************
 # 16.2 - Compute the Levenshtein Distance (Minimum Edit Distance of two words)
 # ************************************************************************************

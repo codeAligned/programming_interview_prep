@@ -39,6 +39,12 @@ def perm(arr):
 # Shuffle an array
 
 
+
+
+# ================================
+# SCRAP
+# ================================
+
 arr = [1,2,3]
 shuffle(arr)
 print(arr)
