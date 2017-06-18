@@ -7,7 +7,21 @@ Alex Chao
 
 """
 import random
+import time
 
+def timeit(method):
+
+    def timed(*args, **kw):
+        ts = time.time()
+        result = method(*args, **kw)
+        te = time.time()
+
+        #print '%r (%r, %r) %2.2f sec' % \
+        #      (method.__name__, args, kw, te-ts)
+        print('method = {}, args = {}, kw = {}, time = {}'.format(method.__name__, args, kw, te-ts))
+        return result
+
+    return timed
 
 def convert_dict_to_dataframe(d):
     return pd.DataFrame.from_dict(d,orient='index')
