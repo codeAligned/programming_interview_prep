@@ -40,6 +40,7 @@ def football_working(final_score = 12, scores = [2,3,7]):
 
 
 #not working
+"""
 def football(n):
     if n == 2 or n == 3 or n == 0:
         return 1
@@ -49,6 +50,7 @@ def football(n):
         return football(n-2) + football(n-3) + football(n-7)
     else:
         return football(n-2) + football(n-3)
+"""
 
 
 def initialize_matrix_zeros(rows,cols):
@@ -92,6 +94,7 @@ num_ways
 # ************************************************************************************
 # 16.10 - Count the number of moves to climb stairs
 # ************************************************************************************
+
 
 # ************************************************************************************
 # 16.6 - The Knapsack Problem
