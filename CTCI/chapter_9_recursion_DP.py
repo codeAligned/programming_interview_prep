@@ -145,12 +145,49 @@ def test_find_equil():
 
 
 # ************************************************************************************
-# 9.3 Return all subsets of a set
+# 9.4 Return all subsets of a set
 # ************************************************************************************
+# trick: realize that f(n) = f(n-1) + [ f(n-1) + n ]
+# at each level, we just add the new number to the last set of subsets
 
+# still in progress
+s = ['a','b','c']
+def generate_subsets(s):
+    subsets = [[]]
+    subsets.append('')
+    subsets.append(s[0])
+
+    for i in range(1,len(s)):
+        saved_subset = subsets.copy()
+        for j,v in enumerate(subsets):
+            subsets[i] += s[i] # append new guy to each element
+        subsets.append(saved_subset)
+    return subsets
+
+generate_subsets(s)
+
+subsets = []
+subsets.append('')
+subsets.append(s[0])
+subsets
+
+i=1
+saved_subset = subsets.copy()
+for j in range(len(subsets)):
+    subsets[i] += s[i]  # append new guy to each element
+subsets += saved_subset
+subsets
+
+# leetcode solution
+# Iteratively
+def subsets(self, nums):
+    res = [[]]
+    for num in sorted(nums):
+        res += [item+[num] for item in res]
+    return res
 
 # ************************************************************************************
-# 9.4 - Compute all permutations of a string of unique chars
+# 9.5 - Compute all permutations of a string of unique chars
 # ************************************************************************************
 
 
