@@ -101,14 +101,13 @@ def count_ways(n,m):
 def count_ways_2D_array(x,y):
     return math.factorial(x+y) / (math.factorial(x) * math.factorial(y))
 
-n = 5
-m = np.zeros([n, n])
-
-n=3
-m=4
-count_ways(4,4)
-
-count_ways_2D_array(3,3)
+def test_count_ways():
+    n = 5
+    m = np.zeros([n, n])
+    n=3
+    m=4
+    count_ways(4,4)
+    count_ways_2D_array(3,3)
 
 #random: u can do tuples in list comprehensions too
 
@@ -119,6 +118,31 @@ count_ways_2D_array(3,3)
 # 9.3 Magic or Equilibrium Index of Array is such that A[i] = i
 # Given sorted array, find a magic index, if any
 # ************************************************************************************
+# use binary search ?
+# if values are all distinct -> we can use binary search
+# if values are NOT distinct, we need to call binary search on BOTH sides
+
+
+@timeit
+def find_equil(arr, start, end):
+    if start >= end:
+        return
+    else:
+        mid = int((start + end) * 0.5)
+        # check
+        if arr[mid] == mid: # done, found
+            return mid
+        elif arr[mid] < mid:
+            # search: L: [0,mid], R: [mid+1, end]
+            return find_equil(arr, start, mid)
+            return find_equil(arr, mid+1, end)
+
+# =======
+def test_find_equil():
+    arr = [-10,-5,2,2,2,3,4,7,9,12,13]
+    arr = sorted([randint(1,10) for x in range(20)])
+    find_equil(arr,0,len(arr)-1)
+
 
 # ************************************************************************************
 # 9.3 Return all subsets of a set
