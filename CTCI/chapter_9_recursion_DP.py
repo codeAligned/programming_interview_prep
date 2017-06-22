@@ -149,34 +149,33 @@ def test_find_equil():
 # ************************************************************************************
 # trick: realize that f(n) = f(n-1) + [ f(n-1) + n ]
 # at each level, we just add the new number to the last set of subsets
+#list of lists
+import copy
+
 
 # still in progress
-s = ['a','b','c']
-def generate_subsets(s):
-    subsets = [[]]
-    subsets.append('')
-    subsets.append(s[0])
+s = ['a','b','c','d']
+subsets(s)
+# WORKING
+def subsets(s):
+    a = []
+    #for i in range(len(s)):
+    #    a.append([])
+    a.append([''])
+    a.append([s[0]])
 
     for i in range(1,len(s)):
-        saved_subset = subsets.copy()
-        for j,v in enumerate(subsets):
-            subsets[i] += s[i] # append new guy to each element
-        subsets.append(saved_subset)
-    return subsets
+        saved_subset = copy.deepcopy(a)
+        for j,v in enumerate(a):
+            if a[j] == ['']: # we dont want to append letters to an empty set
+                print('setting a_J to : ', s[i])
+                a[j] = [s[i]]
+            else:
+                a[j].append(s[i]) # append new guy to each element
+        a = saved_subset + a
 
-generate_subsets(s)
+    return a
 
-subsets = []
-subsets.append('')
-subsets.append(s[0])
-subsets
-
-i=1
-saved_subset = subsets.copy()
-for j in range(len(subsets)):
-    subsets[i] += s[i]  # append new guy to each element
-subsets += saved_subset
-subsets
 
 # leetcode solution
 # Iteratively
@@ -186,6 +185,9 @@ def subsets(self, nums):
         res += [item+[num] for item in res]
     return res
 
+
+
+
 # ************************************************************************************
 # 9.5 - Compute all permutations of a string of unique chars
 # ************************************************************************************
@@ -194,7 +196,6 @@ def subsets(self, nums):
 # ************************************************************************************
 # 9.8 - Give infinite number of quarters, dimes, nickets, pennies, calculate how many
 # ways of representing n cents
-
 # ************************************************************************************
 
 
