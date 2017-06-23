@@ -158,6 +158,7 @@ s = ['a','b','c','d']
 subsets(s)
 # WORKING
 def subsets(s):
+    # store into list of lists
     a = []
     #for i in range(len(s)):
     #    a.append([])
@@ -191,6 +192,21 @@ def subsets(self, nums):
 # ************************************************************************************
 # 9.5 - Compute all permutations of a string of unique chars
 # ************************************************************************************
+s = ['1','2']
+
+def insert_char_at(s, c, i):
+    left = s[:i]
+    right = s[i:]
+    return left + [c] + right
+
+a = []
+for item in s:
+    a = [item] # base case
+
+    out = []
+    for i in range(len(s)):
+        out.append(insert_char_at(s,'3',i))
+# still not finished
 
 
 # ************************************************************************************
