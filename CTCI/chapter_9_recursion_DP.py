@@ -125,6 +125,19 @@ def test_count_ways():
 
 @timeit
 def find_equil(arr, start, end):
+    """
+    find the equilibrium index if values are not distinct 
+    
+    Parameters
+    ----------
+    arr
+    start
+    end
+
+    Returns
+    -------
+
+    """
     if start >= end:
         return
     else:
@@ -192,26 +205,76 @@ def subsets(self, nums):
 # ************************************************************************************
 # 9.5 - Compute all permutations of a string of unique chars
 # ************************************************************************************
-s = ['1','2']
+# WORKING -although maybe inefficient
+# submitted on leet code : https://leetcode.com/problems/permutations/#/solutions
+
 
 def insert_char_at(s, c, i):
     left = s[:i]
     right = s[i:]
     return left + [c] + right
 
-a = []
+def insert_chars_everywhere(s,c):
+    out = []
+    for i in range(len(s)+1):
+        out.append(insert_char_at(s,c,i))
+    return out
+
+
+# try again
+s=['a','b','c','d']
+
+def permutations(s):
+    """
+    Return all permuations of list s
+    
+    Parameters
+    ----------
+    s - list of chars
+
+    Returns
+    -------
+    list of lists
+    
+    """
+    a = [[]]
+    a.append([s[0]]) # add first element
+    for c in range(1,len(s)): # starting at index 1
+        print(a)
+        for l in a: # go through each element of a
+            a = a + insert_chars_everywhere(l, s[c])
+    return [x for x in a if len(x) == len(s)]
+
+def test_permuations():
+    permutations(['1','2','3'])
+
+
+"""
+
 for item in s:
-    a = [item] # base case
+    #a = [item] # base case
 
     out = []
-    for i in range(len(s)):
+    for i in range(len(s)+1):
         out.append(insert_char_at(s,'3',i))
-# still not finished
+def permutations(s):
+    if len(s) <= 1:
+        return s
+    else:
+        for i,v in enumerate(s):
+            rest_s = s[:i] + s[i+1:] # contains everything but s[i]
+            #print(permutations(rest_s))
+            print(insert_chars_everywhere(permutations(rest_s),v))
+            #return permutations(rest_s)
+"""
 
 
 # ************************************************************************************
 # 9.8 - Give infinite number of quarters, dimes, nickets, pennies, calculate how many
 # ways of representing n cents
+# NOTE: THIS IS THE SAME AS THE FOOTBALL PROBLEM
+
 # ************************************************************************************
 
+football_working(final_score = 10, scores = [1,5,10,25])
 
