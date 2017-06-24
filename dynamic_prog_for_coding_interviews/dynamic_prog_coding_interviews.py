@@ -44,3 +44,66 @@ def calc_min_cost_path(M):
         for col in range(1,cols):
             A[row][col] = M[row][col] + min(A[row-1][col], A[row][col-1])
     return A[rows-1][cols-1]
+
+
+# ************************************************************************************
+# Ch 9 Practice Questions - Edit Distance - p 78
+# given 2 strings, find the min number of operations required to convert one string to
+# the other (one operation = interset, remove, or replace
+# ************************************************************************************
+# WORKING - submitted on leetcode - https://leetcode.com/problems/minimum-path-sum/#/description
+
+
+s1 = 'sunday'
+s2 = 'saturday'
+
+edit_distance(s1,s2,False)
+
+edit_distance('a','',True)
+
+def edit_distance(s1,s2, verbose=True):
+    """
+    Given 2 strings, compute the edit distance of the 2 strings
+    Parameters
+    ----------
+    s1
+    s2
+
+    Returns
+    -------
+
+    """
+    s1 = ' ' + s1 # add space to begining
+    s2 = ' ' + s2
+    A = initialize_matrix_zeros(len(s1), len(s2))
+
+    rows = len(s1)
+    cols = len(s2)
+
+    A[0][0] = 0
+    #fill out first row and col 1st
+    for i in range(1,rows):
+        A[i][0] = A[i-1][0] + 1 # copy sum down
+
+    for j in range(1,cols):
+        A[0][j] = A[0][j-1] + 1
+
+    #now fill in the rest of the matrix
+    for row in range(1,rows):
+        for col in range(1,cols):
+            #TRICK: if no edit is needed, just copy it over
+            if s1[row] == s2[col]:
+                A[row][col] = A[row-1][col-1]
+            else: # we need to either replace, add, or remove
+                A[row][col] = 1 + min(A[row-1][col],
+                                      A[row][col-1],
+                                      A[row-1][col-1])
+
+    if verbose:
+        return A
+    else:
+        return A[rows-1][cols-1]
+
+
+
+
