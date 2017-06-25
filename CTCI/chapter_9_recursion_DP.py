@@ -1,6 +1,6 @@
 # ************************************************************************************
 # INTERVIEW PREP - Programming Interview Questions from
-# Cracking the Coding Interview 5th Edition
+# Cracking the Coding Interview
 # Created 6-18-2017
 # Author: Alex H Chao
 # ************************************************************************************

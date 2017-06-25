@@ -1,7 +1,7 @@
 # ************************************************************************************
 # INTERVIEW PREP - Programming Interview Questions from
-# Elements of Programming Interviews
-# Created 5-7-2017
+# Dynamic Programming for Coding Interviews
+# Created 6-24-2017
 # Author: Alex H Chao
 # ************************************************************************************
 
