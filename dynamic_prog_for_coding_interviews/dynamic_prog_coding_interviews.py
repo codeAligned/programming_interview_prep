@@ -105,7 +105,8 @@ def edit_distance(s1,s2, verbose=True):
         return A[rows-1][cols-1]
 
 
-from helper import *
+from helper.helper import *
+import numpy as np
 
 # ************************************************************************************
 # Ch 6 - Find length of longest substring such that sum of digits in first half
@@ -124,14 +125,47 @@ from helper import *
 # 1) populate matrix - sum[i][j] -> sum of digits from i thru j (upper triagular matrix)
 # 2) check every element with its "complement", e.g. (1,2) -> (3,4), (0,3) -> (4,7)
 a = '142124'
-list(a)
-a = [9,4,3,0,7,2,3]
-b = convert_list_chars_to_int(list(a))
+#a = [9,4,3,0,7,2,3]
 
-n = len(b)
-M = initialize_matrix_zeros(n,n)
+# THIS WORKS
+def equilibrium_array(a):
+    a = convert_list_chars_to_int(list(a))
 
-for row in range(len)
+    n = len(a)
+    #M = initialize_matrix_zeros(n,n)
+
+    # base case - initialize diagonals first
+    M = np.diag(a)
+
+    # fill out the Matrix M
+    for row in range(n):
+        for col in range(row+1,n):
+            M[row][col] = M[row][col-1] + a[col]
+
+    # Now check each row and its complement, if they are equal,
+    # keep track of running max
+    running_max = 0
+    for row in range(n):
+        for col in range(row+1,int(n/2)): # note, we should stop at len/2!
+            row_c, col_c = find_complement(row,col)
+            if M[row][col] == M[row_c][col_c]:
+                print('match found at: ({},{}) and ({},{})'.format(
+                    row,col,row_c,col_c
+                ))
+                length = col-row+1
+                if length > running_max:
+                    print('updating new max to : {}'.format(length))
+                    running_max = length
+
+    return running_max
+
+
+def find_complement(row,col):
+    """
+    helper function to find the "complement"
+    """
+    return col+1, col+1 + col-row
+
 
 # ************************************************************************************
 # 9.3 String Interleaving, p88
@@ -145,8 +179,55 @@ for row in range(len)
 
 # ************************************************************************************
 # 9.5 Longest Common Subsequence, p 100
+# Given 2 strings, retrusn total characters in their LCS
+# Note, they dont need to be continuous
+# ex) ABCD, AEBD, LCS = ABD, answer = 3
 # ************************************************************************************
+# 8:35 PM, argo tea, mon 7/17/17, solved 8:56
 
+# Methodology
+# 1) add null space at begining of each string
+# 2) fill out Matrix M with following formula
+#   if a[row] == b[col] # they are equal
+#       M[row][col] = 1 + max( M[row-1][col], M[row][col-1] )
+#    else :
+#       M[row][col] = 1 + max( M[row-1][col], M[row][col-1] )
+
+a, b = 'ABCD' , 'AEBD'
+longest_common_subsequence(a,b)
+
+def longest_common_subsequence(a,b):
+    """
+    Returns the longest common subsequence
+    Parameters
+    ----------
+    a = string
+    b = string
+
+    Returns
+    -------
+    number (or Matrix)
+    """
+    a, b = list(a), list(b)
+    n, m = len(a), len(b)
+    M = initialize_matrix_zeros(n+1,m+1)
+
+    # remember to -1 to indexing of a,b
+
+    # start at row, col = 1
+    lcs = []
+    for row in range(1,n+1):
+        for col in range(1,m+1): # m+1 since we added a "null" col
+            if a[row-1] == b[col-1]: # subtract one since we add null col
+                #print(a[row-1],b[col-1])
+                lcs.append(a[row-1])
+                M[row][col] = 1 + max( M[row-1][col], M[row][col-1] )
+                # letters equal, increment LCS
+            else:
+                M[row][col] = max(M[row - 1][col], M[row][col - 1])
+                # else, carry over
+
+    return M, lcs
 
 
 # ************************************************************************************
@@ -158,13 +239,50 @@ for row in range(len)
 
 # ************************************************************************************
 # 9.10 Longest Palindromatic Subsequence, p 121
+# Given string, find length of longest palindrome sequence
 # ************************************************************************************
+# 9:01 PM - 7/17/17 - argo tea
+
+a = 'BBABCBCAB'
+b = 'abcdeffedcbc'
+longest_palindromatic_subsequence(b)
+
+def longest_palindromatic_subsequence(a):
+    a = list(a)
+    n = len(a)
+
+    # initialize (diag are all ones, as a[i,i] will always be a palindrome length 1
+    M = np.diag(np.ones(n))
+
+    for k in range(1, n ): # k is just length from i to j
+        for i in range(n - k ):
+            j = i + k
+            #print('i,j,k = {}, {}, {}'.format(i, j, k))
+            # base case, if letters are same and adjecent, should be 2
+            if (a[i] == a[j]) & (k==1):
+                M[i][j] = 2
+            elif a[i] == a[j]: # start and ends are equal -> recurse
+                M[i][j] = 2 + M[i+1][j-1]
+            else: # start and ends are not equal
+                M[i][j] = max( M[i+1][j], M[i][j-1] )
+
+    return M, M[0][n-1]
 
 
 
+# ==== book gives weird loops, I made it simplier
 
+n = 5
+for k in range(2,n+1):
+    for i in range(n-k+1):
+        j = i+k-1
+        print('i,j,k = {}, {}, {}'.format(i,j,k))
 
+for k in range(1, n):  # k is just length from i to j
+    for i in range(n - k):
+        j = i + k
+        print('i,j,k = {}, {}, {}'.format(i, j, k))
 
-
+# ====
 
 
