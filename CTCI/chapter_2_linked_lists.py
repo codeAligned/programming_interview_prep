@@ -9,8 +9,8 @@ import numpy as np
 import pandas as pd
 from helper.helper import *
 from random import randint
-
-
+import data_structures.linked_list
+#from data_structures import linked_list
 
 class node:
     # constructor
@@ -62,6 +62,19 @@ class linked_list:
                 total_string += value_string + ' -> '
         return total_string
 
+    def reverse(self): #reverse needs to be inside the linked list class
+        # prev, cur, next
+        prev = None
+        cur = self.head
+
+        while cur:
+            next = cur.next   # 1) save next
+            cur.next = prev   # 2) reverse it, set next to prev
+            prev = cur        # 3) Move over prev
+            cur = next        # 4) Move over cur
+        self.head = prev
+
+
 # ************************************************************************************
 # Reverse a Linked List
 # ************************************************************************************
@@ -85,8 +98,9 @@ def reverse_linked_list(head):
         #first save next
         next = head.next # save next
         head.next = prev # reverse the next ptr
-        head = head.next # move head over
         prev = head
+        head = next # move head over
+
     return prev
 
 # ===========
@@ -102,7 +116,8 @@ def reverseList(self, head):
         curr.next = prev
         prev = curr
     return prev
-Recursion
+
+#Recursion
 
 class Solution:
 # @param {ListNode} head
@@ -117,7 +132,7 @@ def _reverse(self, node, prev=None):
     node.next = prev
     return self._reverse(n, node)
 
-
+# testing
 
 l = linked_list()
 l.append(1)
@@ -125,8 +140,14 @@ l.append(2)
 l.append(3)
 print l
 
+l.reverse()
+print(l)
+# WORKS
+
+
 n = node()
 n = reverse_linked_list(l.head)
+
 print(n)
 
 list(l)
@@ -216,5 +237,8 @@ def has_cycle(head):
 #  2) Use the runner technique to find the middle (when fast ptr reaches end, slow ptr
 #  is in the middle
 #  3) increment slow ptr one by one and pop elements off stack
+
+# OR compare 1st half to the reversed 2nd half
+
 
 
