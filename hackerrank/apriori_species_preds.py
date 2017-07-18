@@ -2,6 +2,23 @@
 # 6-25-2017
 # Hacker Rank
 # ============================
+# The Jungle Book
+# There are n animnal species
+# Each species has a max 1 direct predator
+# no 2 species are predators of each other
+# if Z is a direct predator of Y and species X is a direct predator of Z, then X is an indirect pred of Y
+# (seems similar to circle of friends problem..
+# Returns: integer denoting the min number of species groups so that each species belongs to only one group
+# and no species in the same group is a direct or indirect predator of another
+
+# =================
+# Algorithm (from Ilia)
+# don't need graphs, necessarily
+# just a bunch of linked lists
+# 1) translate into a bunch of linked lists
+# 2) answer = length of longest list + 1
+
+
 
 import heapq
 import math as m

@@ -105,18 +105,33 @@ def edit_distance(s1,s2, verbose=True):
         return A[rows-1][cols-1]
 
 
+from helper import *
 
 # ************************************************************************************
 # Ch 6 - Find length of longest substring such that sum of digits in first half
 # equals the sum of digits in second half
+# p 51
+# example:
+# input = '142124', output = 6
+# input = '9430723', output = 4 (from 4307)
+
 # ************************************************************************************
-# 7-4-2017, 2:54 PM
+# 7-17-2017
+# Argo tea - 7:51 PM
 
 # Methodology
+# M[i][j] = sum of digits from i through j
 # 1) populate matrix - sum[i][j] -> sum of digits from i thru j (upper triagular matrix)
 # 2) check every element with its "complement", e.g. (1,2) -> (3,4), (0,3) -> (4,7)
-
+a = '142124'
+list(a)
 a = [9,4,3,0,7,2,3]
+b = convert_list_chars_to_int(list(a))
+
+n = len(b)
+M = initialize_matrix_zeros(n,n)
+
+for row in range(len)
 
 # ************************************************************************************
 # 9.3 String Interleaving, p88

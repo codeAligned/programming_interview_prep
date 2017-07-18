@@ -65,3 +65,9 @@ def swap(a, b):  # assume a > b
     a = b - a  # a = a- diff = b
     print(a, b)
 """
+
+
+def convert_list_chars_to_int(l):
+    return list(map(int, l))
+
+
