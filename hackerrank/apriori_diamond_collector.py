@@ -1,4 +1,7 @@
-
+# Diamond Mine
+# Start at (0,0), go to (n-1, n-1), collecting diamonds on the way
+# After reaching (n-1,n-1), find a path back to (0,0)
+# Return the maximum number of diamonds collected
 
 M = [[1,3,5,8],[4,2,1,7],[4,3,2,3]]
 len(M[0])
