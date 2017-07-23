@@ -12,7 +12,7 @@ from random import randint
 #   - originCities to destinationCities
 # 0 otherwise
 
-# ============
+# ============ Methodology by Ilia
 # represent graph as a matrix (n by n)
 # 1 if gcd(x,y) > g, else 0
 # then, translate matrix into an actual graph
