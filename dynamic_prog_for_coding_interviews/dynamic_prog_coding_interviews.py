@@ -233,9 +233,19 @@ def longest_common_subsequence(a,b):
 # ************************************************************************************
 # 9.8 Cutting a Rod, p 114
 # ************************************************************************************
+# 7-31
 
+price = [1,5,8,9,10,17,17,20]
+# from the book
+# NEEDS REVIEW
 
+max_values = [0 for x in range(len(price)+1)]
 
+for i in range(1,len(price)+1):
+    for j in range(i):
+        max_values[i] = max(max_values[i], price[j] + max_values[i-j-1])
+
+max_values
 
 # ************************************************************************************
 # 9.10 Longest Palindromatic Subsequence, p 121
