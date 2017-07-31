@@ -19,14 +19,14 @@ def merge(left, right):
     i, j = 0, 0
     size_left, size_right = len(left), len(right)
     while (i < size_left) & ( j < size_right):
-        if left[i] <= right[j]:
+        if left[i] <= right[j]: # iterate through both arrays, adding smaller value
             merged.append(left[i])
             i += 1
         else:
             merged.append(right[j])
             j += 1
 
-    while i < size_left:
+    while i < size_left: # add all left over items from the other array
         merged.append(left[i])
         i += 1
     while j < size_right:

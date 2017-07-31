@@ -18,3 +18,4 @@ from random import randint
 #  - e.g. 1 - start, 2 - start, 4 - start, 5 - end, 5 - end, 6 = start, 7 - end
 #  - counter = [1,2,3,2,1,2,1]
 #  - sorting takes nlogn and iterating takes another n
+

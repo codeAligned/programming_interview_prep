@@ -21,6 +21,7 @@ def partition(a, lo, hi):
 
     Returns
     -------
+    index of pivot point of an
     array where [0:pivot] is less than pivot, [pivot+1:n] are greater than pivot
     """
 
@@ -30,6 +31,7 @@ def partition(a, lo, hi):
     #hi = p- 1 if p is None else hi
     #lo = 0 if lo is None else lo
 
+    # 2 pointers, lo and hi, iterate inwards, swapping if things are out of place
     while lo < hi:
         if (a[lo] > a[p]) & (a[hi] < a[p]):  # we need to swap
             swap(a, lo, hi)

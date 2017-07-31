@@ -111,7 +111,8 @@ def knapsack(values,weights,capacity):
             # each new row is a new item
             # if the new item weights too much, we cant take it
             # else, we take the max of (take item) vs (dont take item)
-            V[i][w] = V[i-1][w] if weights[i] > w else max(V[i-1][w - weights[i]] + values[i], V[i-1][w])
+            V[i][w] = V[i-1][w] if weights[i] > w else \
+                max(V[i-1][w - weights[i]] + values[i], V[i-1][w])
     return V
 
 print(knapsack(values,weights,capacity))
