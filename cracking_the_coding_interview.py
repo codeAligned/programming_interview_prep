@@ -155,7 +155,10 @@ def rotate_matrix(m):
         return m
 
 m = initialize_matrix(3)
+m = np.arange(9).reshape([3,3])
 print(rotate_matrix(m))
+
+
 
 # 1.7 Given a M by N matrix, if an element is 0, its entire row and column are set to 0
 # ************************************************************************************

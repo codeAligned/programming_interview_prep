@@ -146,8 +146,6 @@ def max_profit(a):
 
 # solution
 
-def max_profit(a)
-
 # ************************************************************************************
 # 5.7 - Buy and Sell a stock Twice for max profit (the second buy must be made on another
 # date after the first sale)
