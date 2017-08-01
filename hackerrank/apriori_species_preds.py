@@ -27,9 +27,18 @@ from helper.helper import *
 from random import randint
 
 
+# ===============
+# Ilia algo
+
+
+
+
+
+# ===============
+
+
 # minimum number of moves
 
-#
 preds = [-1,0,1]
 graph = {0: -1,
          1: 0,

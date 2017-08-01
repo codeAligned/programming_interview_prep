@@ -257,7 +257,7 @@ a = 'BBABCBCAB'
 b = 'abcdeffedcbc'
 longest_palindromatic_subsequence(b)
 
-def longest_palindromatic_subsequence(a):
+def longest_palindromatic_subsequence(a, verbose=False):
     a = list(a)
     n = len(a)
 
@@ -275,10 +275,10 @@ def longest_palindromatic_subsequence(a):
                 M[i][j] = 2 + M[i+1][j-1]
             else: # start and ends are not equal
                 M[i][j] = max( M[i+1][j], M[i][j-1] )
+            if verbose:
+                print(M)
 
     return M, M[0][n-1]
-
-
 
 # ==== book gives weird loops, I made it simplier
 

@@ -52,12 +52,7 @@ def initialize_matrix(n):
     """
     return [[i+j*(n) for i in range(n)] for j in range(n)]
 
-[np.random.normal() for x in range(9)]
-
-np.ones(10)
-np.zeros(10)
-
-np.diag(x)*
+#[np.random.normal() for x in range(9)]
 
 def initialize_matrix_zeros(rows,cols):
     return [[0 for x in range(cols)] for y in range(rows)]
