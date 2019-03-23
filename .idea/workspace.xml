@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fdc563ba-6808-4bc3-983b-abd0fa3002e9" name="Default" comment="test">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/coding_tests/citadel_sector_data.py" />
+    <list default="true" id="fdc563ba-6808-4bc3-983b-abd0fa3002e9" name="Default" comment="added palindrome and fibonacci">
+      <change type="MOVED" beforePath="$PROJECT_DIR$/coding_tests/citadel_sector_data.py" afterPath="$PROJECT_DIR$/coding_tests/cit_sector_data.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dynamic_prog_for_coding_interviews/dynamic_prog_coding_interviews.py" afterPath="$PROJECT_DIR$/dynamic_prog_for_coding_interviews/dynamic_prog_coding_interviews.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -66,11 +65,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="citadel_sector_data.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/coding_tests/citadel_sector_data.py">
+      <file leaf-file-name="cit_sector_data.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/coding_tests/cit_sector_data.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="235">
-              <caret line="63" column="0" lean-forward="true" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
+            <state relative-caret-position="255">
+              <caret line="17" column="16" lean-forward="true" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -86,7 +85,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dynamic_prog_coding_interviews.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="dynamic_prog_coding_interviews.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dynamic_prog_for_coding_interviews/dynamic_prog_coding_interviews.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="580">
@@ -795,7 +794,14 @@
       <option name="project" value="LOCAL" />
       <updated>1501559380460</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="added palindrome and fibonacci">
+      <created>1553366283466</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1553366283466</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -852,7 +858,8 @@
     <MESSAGE value="study for db" />
     <MESSAGE value="added: longest common subsequence, longest palindromatic sequence" />
     <MESSAGE value="test" />
-    <option name="LAST_COMMIT_MESSAGE" value="test" />
+    <MESSAGE value="added palindrome and fibonacci" />
+    <option name="LAST_COMMIT_MESSAGE" value="added palindrome and fibonacci" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1199,14 +1206,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/coding_tests/citadel_sector_data.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="63" column="0" lean-forward="true" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dynamic_prog_for_coding_interviews/dynamic_prog_coding_interviews.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="580">
@@ -1214,6 +1213,14 @@
           <folding>
             <element signature="e#318#336#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/coding_tests/cit_sector_data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="16" lean-forward="true" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
+          <folding />
         </state>
       </provider>
     </entry>
