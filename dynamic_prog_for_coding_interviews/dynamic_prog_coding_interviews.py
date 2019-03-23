@@ -9,12 +9,86 @@
 import numpy as np
 from random import randint
 from helper.helper import *
+# ************************************************************************************
+# Example 8.4 - Max subarray Kadanes algo Max drawdown
+# find maximum sum of sub array
+
+# ************************************************************************************
+# WORKS - submitted on leetcode - https://leetcode.com/problems/maximum-subarray/
+# trick:
+# maxsumendinghere
+# maxsumsofar
+
+n = [-2,-3,4,-1,-2,1,5,-3]
+
+n = [-1,-2]
+max_subarray(n)
+
+def max_subarray(n):
+    """
+    kadanes algo
+    works with negative numbers
+    
+    Parameters
+    ----------
+    n
+
+    Returns
+    -------
+
+    """
+
+    maxsumendinghere = 0
+    maxsumsofar = 0
+    maxelment = -999999
+    for i in n:
+        maxsumendinghere = maxsumendinghere + i
+
+        maxsumendinghere = max(0, maxsumendinghere)
+        maxsumsofar = max(maxsumendinghere, maxsumsofar)
+        # to deal with negative numbers only
+        maxelment = max(maxelment, i)
+        #print("i={}, maxsumendinghere={},  maxsumsofar={}   ".format(
+        #    i, maxsumendinghere, maxsumsofar
+        ))
+
+    if maxsumsofar == 0:
+        return maxelment
+    else:
+        return maxsumsofar
+
+# this also works
+
+def maxSubArray(nums):
+    """
+    :type nums: List[int]
+    :rtype: int
+        """
+    maxsumendinghere = 0
+    maxsumsofar = 0
+    maxelment = -9223372036854775807
+
+    for i in nums:
+        maxsumendinghere = maxsumendinghere + i
+
+        maxsumendinghere = max(0, maxsumendinghere)
+        maxsumsofar = max(maxsumendinghere, maxsumsofar)
+        # to deal with negative numbers only
+        maxelment = max(maxelment, i)
+
+    if maxsumsofar == 0:
+        return maxelment
+    else:
+        return maxsumsofar
+
+
 
 # ************************************************************************************
 # Example 8.1 - Minimum Cost Path - p 62
 # given n x m matrix - calculate min path from (0,0) to (n,m)
 # ************************************************************************************
-# WORKS - submitted on leetcode - https://leetcode.com/problems/minimum-path-sum/#/description
+# WORKS - submitted on leetcode -
+# https://leetcode.com/problems/minimum-path-sum/#/description
 
 M = [[1,3,5,8],[4,2,1,7],[4,3,2,3]]
 len(M[0])
@@ -44,6 +118,53 @@ def calc_min_cost_path(M):
         for col in range(1,cols):
             A[row][col] = M[row][col] + min(A[row-1][col], A[row][col-1])
     return A[rows-1][cols-1]
+
+###########
+
+def calc_min_cost_path(M):
+    """
+    
+    Parameters
+    ----------
+    M
+
+    Returns
+    -------
+
+    """
+    import numpy as np
+
+    M = np.array(M)
+    A = np.zeros(M.shape)
+
+    rows = M.shape[0]
+    cols = M.shape[1]
+
+
+    A[0, 0] = M[0, 0]
+    # populate rows and cols first
+    for row in range(1, rows):
+        A[row, 0] = M[row, 0] + A[row - 1, 0]
+    for col in range(1, cols):
+        A[0, col] = M[0, col] + A[0, col - 1]
+
+    for row in range(1, rows):
+        for col in range(1, cols):
+            A[row][col] = min(A[row - 1][col], A[row][col - 1]) + M[row][col]
+
+    return (A[rows - 1, cols - 1])
+
+
+
+#######
+
+rows=3
+cols=4
+
+
+
+
+
 
 
 # ************************************************************************************
