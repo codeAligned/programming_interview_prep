@@ -243,13 +243,15 @@ import numpy as np
 
 # Methodology
 # M[i][j] = sum of digits from i through j
-# 1) populate matrix - sum[i][j] -> sum of digits from i thru j (upper triagular matrix)
-# 2) check every element with its "complement", e.g. (1,2) -> (3,4), (0,3) -> (4,7)
+# 1) populate matrix - sum[i][j] -> sum of digits from i thru j
+# (upper triagular matrix)
+# 2) check every element with its "complement",
+# e.g. (1,2) -> (3,4), (0,3) -> (4,7)
 a = '142124'
 #a = [9,4,3,0,7,2,3]
 
 # THIS WORKS
-def equilibrium_array(a):
+def equilibrium_array(a, verbose = True):
     a = convert_list_chars_to_int(list(a))
 
     n = len(a)
@@ -278,7 +280,7 @@ def equilibrium_array(a):
                     print('updating new max to : {}'.format(length))
                     running_max = length
 
-    return running_max
+    return running_max, M
 
 
 def find_complement(row,col):
@@ -287,6 +289,8 @@ def find_complement(row,col):
     """
     return col+1, col+1 + col-row
 
+
+m,M = equilibrium_array(a = '142124')
 
 # ************************************************************************************
 # 9.3 String Interleaving, p88
@@ -314,7 +318,7 @@ def find_complement(row,col):
 # 1) add null space at begining of each string
 # 2) fill out Matrix M with following formula
 #   if a[row] == b[col] # they are equal
-#       M[row][col] = 1 + max( M[row-1][col], M[row][col-1] )
+#       M[row][col] = 1 + M[row-1][col-1], M[row-1][col-1]
 #    else :
 #       M[row][col] = 1 + max( M[row-1][col], M[row][col-1] )
 
@@ -377,9 +381,13 @@ max_values
 # Given string, find length of longest palindrome sequence
 # ************************************************************************************
 # 9:01 PM - 7/17/17 - argo tea
+# M = longest palindromatic subsequence of substring starting from i to j
 
 a = 'BBABCBCAB'
 b = 'abcdeffedcbc'
+
+b = 'dabbaccc'
+
 longest_palindromatic_subsequence(b)
 
 def longest_palindromatic_subsequence(a, verbose=False):
