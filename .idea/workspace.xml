@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fdc563ba-6808-4bc3-983b-abd0fa3002e9" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hackerrank/interview_prep_kit/1_arrays.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hackerrank/interview_prep_kit_all_code.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/EPI/chapter_18_graphs.py" afterPath="$PROJECT_DIR$/EPI/chapter_18_graphs.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -62,7 +61,7 @@
         <entry file="file://$PROJECT_DIR$/cracking_the_coding_interview.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="616">
-              <caret line="44" column="0" lean-forward="true" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
+              <caret line="44" column="0" lean-forward="false" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -71,8 +70,8 @@
       <file leaf-file-name="chapter_18_graphs.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/EPI/chapter_18_graphs.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="588">
-              <caret line="42" column="3" lean-forward="true" selection-start-line="42" selection-start-column="3" selection-end-line="42" selection-end-column="3" />
+            <state relative-caret-position="783">
+              <caret line="359" column="0" lean-forward="true" selection-start-line="359" selection-start-column="0" selection-end-line="359" selection-end-column="0" />
               <folding>
                 <element signature="e#327#343#0" expanded="true" />
               </folding>
@@ -143,10 +142,12 @@
       <find>balance</find>
       <find>initialize_matrix_zeros</find>
       <find>convert_list_chars_to_int</find>
+      <find>j</find>
     </findStrings>
     <replaceStrings>
       <replace>[</replace>
       <replace>]</replace>
+      <replace>col</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -175,7 +176,6 @@
         <option value="$PROJECT_DIR$/graphs/dfs.py" />
         <option value="$PROJECT_DIR$/CTCI/chapter_9_recursion_DP.py" />
         <option value="$PROJECT_DIR$/EPI/chapter_10_heaps.py" />
-        <option value="$PROJECT_DIR$/EPI/chapter_18_graphs.py" />
         <option value="$PROJECT_DIR$/graphs/bfs.py" />
         <option value="$PROJECT_DIR$/hackerrank/apriori_diamond_collector.py" />
         <option value="$PROJECT_DIR$/graphs/bfs_dfs.py" />
@@ -191,6 +191,7 @@
         <option value="$PROJECT_DIR$/hackerrank/interview_prep_kit/1_arrays.py" />
         <option value="$PROJECT_DIR$/hackerrank/interview_prep_kit/all_code.py" />
         <option value="$PROJECT_DIR$/hackerrank/interview_prep_kit_all_code.py" />
+        <option value="$PROJECT_DIR$/EPI/chapter_18_graphs.py" />
       </list>
     </option>
   </component>
@@ -411,7 +412,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="preferences.toDoOptions" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.General" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="SearchEverywhereHistoryKey" value="brack&#9;null&#9;null" />
   </component>
@@ -840,7 +841,14 @@
       <option name="project" value="LOCAL" />
       <updated>1553449857543</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="started on hacker rank interview prep kit">
+      <created>1553958439224</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1553958439224</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -873,7 +881,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="- added 5.1 - dutch national flag problem" />
     <MESSAGE value="- added 5.14 - compute random permutation" />
     <MESSAGE value="added 5.9 - enumerate all primes up to n" />
     <MESSAGE value="added 5.18 sprial ordering (not complete yet)&#10;added ch 6 - strings" />
@@ -898,7 +905,8 @@
     <MESSAGE value="test" />
     <MESSAGE value="added palindrome and fibonacci" />
     <MESSAGE value="small changes to dp problems" />
-    <option name="LAST_COMMIT_MESSAGE" value="small changes to dp problems" />
+    <MESSAGE value="started on hacker rank interview prep kit" />
+    <option name="LAST_COMMIT_MESSAGE" value="started on hacker rank interview prep kit" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1242,15 +1250,15 @@
     <entry file="file://$PROJECT_DIR$/cracking_the_coding_interview.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="616">
-          <caret line="44" column="0" lean-forward="true" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
+          <caret line="44" column="0" lean-forward="false" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/EPI/chapter_18_graphs.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="588">
-          <caret line="42" column="3" lean-forward="true" selection-start-line="42" selection-start-column="3" selection-end-line="42" selection-end-column="3" />
+        <state relative-caret-position="783">
+          <caret line="359" column="0" lean-forward="true" selection-start-line="359" selection-start-column="0" selection-end-line="359" selection-end-column="0" />
           <folding>
             <element signature="e#327#343#0" expanded="true" />
           </folding>
