@@ -302,53 +302,6 @@ image = [[1, 1, 0, 0],
 flip_color_wrapper(0,0,image)
 
 
-# hacker rank
-###############
-# get biggest region
-# DFS: Connected Cell in a Grid
-# https://www.hackerrank.com/challenges/ctci-connected-cell-in-a-grid/problem?h_l=interview&playlist_slugs%5B%5D=interview-preparation-kit&playlist_slugs%5B%5D=graphs
-
-#https://www.hackerrank.com/challenges/ctci-connected-cell-in-a-grid/forum?h_l=interview&playlist_slugs%5B%5D=interview-preparation-kit&playlist_slugs%5B%5D=graphs
-
-# - for row in rows, col in columns
-# - if value =1
-# - getregionsize(matrix, row, col)
-# -  this does a DFS
-
-def getBiggestRegion(grid):
-    maxRegion = 0
-    for row in range(len(grid)):
-        for col in range(len(grid[0])):
-            maxRegion = max(maxRegion, countCells(grid, row, col))
-    return maxRegion
-
-
-def countCells(grid, row, col):
-    if (not (row in range(len(grid)) and col in range(len(grid[0])))):
-        return 0 # if out of range..
-    if (grid[row][col] == 0):
-        return 0
-    count = 1
-    grid[row][col] = 0
-    count += countCells(grid, row + 1, col)
-    count += countCells(grid, row - 1, col)
-    count += countCells(grid, row, col + 1)
-    count += countCells(grid, row, col - 1)
-    count += countCells(grid, row + 1, col + 1)
-    count += countCells(grid, row - 1, col - 1)
-    count += countCells(grid, row - 1, col + 1)
-    count += countCells(grid, row + 1, col - 1)
-    return count
-
-########################
-
-image = [[0, 0, 1 ,1],
-        [0, 0, 1, 0],
-        [0, 1, 1, 0],
-        [0, 1, 0, 0],
-        [1, 1, 0, 0]]
-
-getBiggestRegion(grid=image)
 
 
 
