@@ -427,5 +427,44 @@ for k in range(1, n):  # k is just length from i to j
         print('i,j,k = {}, {}, {}'.format(i, j, k))
 
 # ====
+import numpy as np
 
+s = 'ffff'
+
+M = [[0 for col in range(n)] for row in range(n)]
+diag = [ M[i][i] for i in range(len(M)) ]
+
+longestPalindromeSubseq(s)
+longest_palindromatic_subsequence(s)
+
+def longestPalindromeSubseq(s):
+    """
+    :type s: str
+    :rtype: int
+    """
+    # import numpy as np
+    a = list(s)
+    n = len(s)
+
+    # initialize (diag are all ones, as a[i,i] will always be a palindrome length 1
+    # initialize matrix of zeros
+    M = [[0 for col in range(n)] for row in range(n)]
+
+    # identify matrix
+    for i in range(n):
+        M[i][i] = 1
+
+    for k in range(1, n):  # k is just length from i to j
+        for i in range(n - k):
+            j = i + k
+        # print('i,j,k = {}, {}, {}'.format(i, j, k))
+        # base case, if letters are same and adjecent, should be 2
+        if (a[i] == a[j]) & (k == 1):
+            M[i][j] = 2
+        elif a[i] == a[j]:  # start and ends are equal -> recurse
+            M[i][j] = 2 + M[i + 1][j - 1]
+        else:  # start and ends are not equal
+            M[i][j] = max(M[i + 1][j], M[i][j - 1])
+
+    return int(M[0][n - 1])
 

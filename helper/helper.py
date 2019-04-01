@@ -57,6 +57,12 @@ def initialize_matrix(n):
 def initialize_matrix_zeros(rows,cols):
     return [[0 for x in range(cols)] for y in range(rows)]
 
+def identity_matrix(n):
+    M = [[0 for col in range(n)] for row in range(n)]
+    # identify matrix
+    for i in range(n):
+        M[i][i] = 1
+    return M
 
 """
 def swap(a, b):  # assume a > b

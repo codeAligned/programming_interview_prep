@@ -187,6 +187,92 @@ def maxMin(k, arr):
 
     return total_min
 
+####################
+# Search
+####################
+
+
+# Ice Cream Parlor
+
+# leverage the 2sum function
+def test_three_sum():
+    a = [11,2,5,7,3]
+    a.sort()
+    print(two_sum(a,22))
+    print(three_sum(a, 22))
+
+# assume sorted
+def two_sum(a, num):
+    # 2 ptrs
+    start = 0
+    end = len(a)-1
+
+    while start < end: # tricky, make sure its < not <=
+        this_sum = a[start] + a[end]
+        if this_sum == num:
+            #we found it
+            return True
+        elif this_sum < num:
+            start += 1
+        else:
+            end -= 1
+    return False
+
+
+def three_sum(a, target):
+    # check if two_sum = target - current num
+    a.sort()
+    for x in a:
+        found = two_sum(a, target - x)
+        print(x, target-x)
+        if found:
+            return True
+    return False
+
+def whatFlavors(a, num):
+    a.sort()
+
+    # 2 ptrs
+    start = 0
+    end = len(a)-1
+
+    while start < end: # tricky, make sure its < not <=
+        this_sum = a[start] + a[end]
+        if this_sum == num:
+            #we found it
+            return("{} {}".format(start+1, end+1))
+        elif this_sum < num:
+            start += 1
+        else:
+            end -= 1
+    return False
+
+
+whatFlavors(a = [1, 4, 5, 3, 2], num=5)
+
+################
+# Pairs (like 2sum but 2diff)
+
+arr = [1, 5, 3, 4, 2]
+ans = 3 #4-2, 5-3, 3-1
+
+# PASSED ALL TESTS!
+def pairs(k, arr):
+    d = {}
+    for i,x in enumerate(arr):
+        if x not in d:
+            d[x] = 1
+    count = 0
+    for i,x in enumerate(arr):
+        diff = k+x
+        try:
+            if d[diff] == 1:
+                count += 1
+        except:
+            continue
+    return count
+
+
 
 
 ####################
@@ -293,6 +379,72 @@ def abbreviation(a,b):
     else:
         return("NO")
 
+#####################
+# Candies
+# https://www.hackerrank.com/challenges/candies/problem?h_l=interview&playlist_slugs%5B%5D=interview-preparation-kit&playlist_slugs%5B%5D=dynamic-programming
+
+######################
+
+#
+
+arr = [4, 6, 4, 5, 6, 2]
+
+arr= [9, 2, 3, 6, 5, 4, 3, 2, 2, 2]
+
+if len(arr) == 1:
+    return [1]
+
+candies = [1] * len(arr)
+
+i=1
+while i < len(arr):
+    if arr[i] > arr[i-1]:
+        candies[i] = candies[i-1] + 1
+    i += 1
+
+candies
+
+candies(n=0, arr=arr)
+
+def candies(n, arr):
+    if len(arr) == 1:
+        return [1]
+
+    candies_1 = [1] * len(arr)
+    candies_2 = [1] * len(arr)
+
+    i = 1
+    while i < len(arr):
+        if arr[i] > arr[i - 1]:
+            candies_1[i] = candies_1[i - 1] + 1
+        i += 1
+
+    i=1
+    while i > 0:
+        if (arr[i] > arr[i + 1]) and (candies[i] <= candies[i+1]):
+            candies_1[i] = candies_1[i + 1] + 1
+        i -= 1
+
+    return candies_1
+
+
+# solution found
+def candies(n, arr):
+    count = [1]
+    for i,x in enumerate(arr[1:],1):
+        if x <= arr[i-1]:
+            count.append(1)
+        else:
+            count.append(count[i-1]+1)
+    for i,x in enumerate(arr[::-1],2):
+        if x <= arr[n-i+1]:
+            count[n-i] = max(count[n-i], 1)
+        else:
+            count[n-i] = max(count[n-i], count[n-i+1]+1)
+    return sum(count)
+
+
+
 
 ####################
 # Graphs
@@ -347,3 +499,4 @@ image = [[0, 0, 1 ,1],
         [1, 1, 0, 0]]
 
 getBiggestRegion(grid=image)
+
